@@ -2,7 +2,7 @@ class AnonymousSurvey():
     """Класс для анонимных ответов."""
 
 
-    def __init___(self, question):
+    def __init__(self, question):
         """Сохраняет вопрос и готовится к сохранению ответов."""
         self.question = question
         self.responses = []
