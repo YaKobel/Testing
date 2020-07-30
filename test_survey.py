@@ -15,18 +15,16 @@ class TestAnonmySurvey(unittest.TestCase):
         self.my_survey.store_response(self.responses[1])
         self.assertIn(self.responses[1], self.my_survey.responses)
 
+    def test_five_responses(self):
+        """Проверяет что 5 ответов были сохраненны"""
+        self.my_survey.store_response(self.responses[0:])
+        self.assertIn(self.responses[0:], self.my_survey.responses)
 
-    # def test_five_responses(self):
-    #     """Проверяет что 5 ответов были сохраненны"""
-    #
-    #     question = "Какой язык программирования вам по душе?"
-    #     my_survey = AnonymousSurvey(question)
-    #     responses5 = ['Java', 'Python', 'C#', 'Go', 'JavaScript']
-    #     for response in responses5:
-    #         my_survey.store_response(response)
-    #
-    #     for response in responses5:
-    #         self.assertIn(response, my_survey.responses)
+    def test_three_responses(self):
+        """Проверяет что 3 ответов были сохраненны"""
+        self.my_survey.store_response(self.responses[2:4])
+        self.assertIn(self.responses[2:4], self.my_survey.responses)
+
 
 if __name__ == '__name__':
     unittest.main()
